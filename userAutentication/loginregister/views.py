@@ -22,5 +22,5 @@ def user_login(request):
                 HttpResponse("La informacion no es correcta")
     else:
         formulario = LoginForm()
-        return render(request, "base.html" ,{"form":formulario}) #18:51
+        return render(request, "cuenta/login.html" ,{"form":formulario}) #18:51
 
