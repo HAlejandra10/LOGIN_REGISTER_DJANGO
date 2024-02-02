@@ -15,9 +15,9 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponse("El usuario no está activo")
-                else: 
                     return HttpResponse("El usuario está autenticado")
+                else: 
+                    return HttpResponse("El usuario no está activo")
             else:
                 HttpResponse("La informacion no es correcta")
     else:
