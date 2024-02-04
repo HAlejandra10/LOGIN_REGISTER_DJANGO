@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def user_login(request):
     #user is sending the form through Post method
@@ -24,3 +25,6 @@ def user_login(request):
         formulario = LoginForm()
         return render(request, "cuenta/login.html" ,{"form":formulario}) #18:51
 
+@login_required
+def dashboard(request):
+    return render(request, "cuenta/dashboard.html")
