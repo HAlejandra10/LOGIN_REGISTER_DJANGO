@@ -16,9 +16,9 @@ def user_login(request):
                 if user.is_active:
                     login(request, user)
                     return HttpResponse("El usuario está autenticado")
-                else: 
+            else: 
                     return HttpResponse("El usuario no está activo")
-            else:
+        else:
                 HttpResponse("La informacion no es correcta")
     else:
         formulario = LoginForm()
