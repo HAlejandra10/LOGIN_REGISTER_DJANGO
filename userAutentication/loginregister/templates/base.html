@@ -17,7 +17,7 @@
         {% if request.user.is_authenticated %}
         <div class="navbar-menu" id="navbarBasicExample">
             <div class="navbar-start">
-                <a href="{% url 'dashboard' %}">
+                <a  class="navbar-item" href="{% url 'dashboard' %}">
                     My Dashboard
                 </a>
 
@@ -43,7 +43,7 @@
             {% endif %}
         </div>
         {% endif %}
-        
+
     </nav>
 
     <div id="columns">

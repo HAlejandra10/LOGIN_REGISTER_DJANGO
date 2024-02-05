@@ -1,4 +1,4 @@
-{% {% extends "base.html" %}%}
+{% extends "base.html" %}
 {% block title%}Log-In{% endblock %}
 <div class="columns">
 {% block content %}
@@ -18,24 +18,13 @@
                 {% load widget_tweaks %}
                 {% for field in form %} 
                     {{field.label_tag}}
-                    {% render_field field class=+="input mt-2" %}
+                    {% render_field field class+="input mt-2" %}
                 {% endfor %}
                 {% csrf_token %}
-                <input type="submit"/>
-                <input type="hidden"/>
+                <input type="submit" value="Log-in" class="button mt-2"/>
+                <input type="hidden"  name="next" value="{{ next }}"/>
             </form>
         </div>
     </div>
     {% endblock %}
 </div>
-
-
-
-
-
-
-
-
-
-
-{%%}
