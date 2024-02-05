@@ -14,3 +14,4 @@ class UserRegistrationForm(forms.Form):
 
     class Meta:
         model = User
+        field = ["username", "first_name", "email"]
