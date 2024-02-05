@@ -15,3 +15,10 @@ class UserRegistrationForm(forms.Form):
     class Meta:
         model = User
         field = ["username", "first_name", "email"]
+        
+    def clean_field(self):
+        cd = self.cleaned_data
+        if cd['password'] != cd["password2"]:
+            return forms.ValidationError("Las contraseñas no son iguales")
+        return cd["password2"]
+    
