@@ -32,7 +32,7 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <p>
-                        Hello {{ request.user.first_name|default:request.user.username}}, 
+                        Hello {{ request.user.first_name|default:request.user.username }}, 
                         <a class="" href="{% url 'logout' %}">
                             <strong>Log out</strong>
                         </a>

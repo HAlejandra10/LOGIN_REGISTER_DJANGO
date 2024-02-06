@@ -6,7 +6,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
     
 
-class UserRegistrationForm(forms.Form):
+class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label="Password", 
                                widget=forms.PasswordInput)
     password2 = forms.CharField(label="Repeat Password", 
@@ -14,9 +14,9 @@ class UserRegistrationForm(forms.Form):
 
     class Meta:
         model = User
-        field = ["username", "first_name", "email"]
+        fields =  ["username", "first_name", "email"]
         
-    def clean_field(self):
+    def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd["password2"]:
             return forms.ValidationError("Las contraseñas no son iguales")
